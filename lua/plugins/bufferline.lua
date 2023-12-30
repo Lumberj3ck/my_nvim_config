@@ -15,5 +15,8 @@ return {
   vim.keymap.set('n', '<leader>$', '<Cmd>BufferLineGoToBuffer -1<CR>', {})
   vim.keymap.set('n', '<leader>k', '<Cmd>BufferLineCycleNext<CR>', {})
   vim.keymap.set('n', '<leader>j', '<Cmd>BufferLineCyclePrev<CR>', {})
+  vim.keymap.set('n', '<leader>l', '<Cmd>BufferLineCloseLeft<CR>', {})
+  vim.keymap.set('n', '<leader>r', '<Cmd>BufferLineCloseLeft<CR>', {})
+  vim.keymap.set('n', '<leader>bb', '<Cmd>BufferLinePickClose<CR>', {})
 	end
 	}
