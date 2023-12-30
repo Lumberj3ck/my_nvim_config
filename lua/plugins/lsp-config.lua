@@ -1,3 +1,4 @@
+lsp_servers = {'lua_ls', 'pyright', 'quick_lint_js'}
 return {
 	{
 		"williamboman/mason.nvim",
@@ -9,7 +10,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup {
-				ensure_installed = { "pyright", "lua_ls", "quick_lint_js"},
+				ensure_installed = lsp_servers,
 			}
 		end
 	},
@@ -17,7 +18,10 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local config = require("lspconfig")
-
+			vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+			vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+			vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+			vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 			vim.api.nvim_create_autocmd('LspAttach', {
 				group = vim.api.nvim_create_augroup('UserLspConfig', {}),
 				callback = function(ev)
@@ -42,9 +46,11 @@ return {
 					end, opts)
 				end,
 			})
-			config.lua_ls.setup({})
-			config.pyright.setup({})
-			config.quick_lint_js.setup({})
+			local capabilities = require('cmp_nvim_lsp').default_capabilities()
+			for _, lsp in pairs(lsp_servers) do
+				config[lsp].setup({capabilities = capabilities})
+			end
 		end
 	}
 }
+
