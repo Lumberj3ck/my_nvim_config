@@ -1,8 +1,16 @@
 vim.g.mapleader = ' '
-vim.wo.number = true 
+vim.wo.number = true
 vim.o.hlsearch = false
 vim.o.mouse = 'a'
 vim.o.clipboard = 'unnamedplus'
+
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+vim.o.smartindent = true
+vim.o.autoindent = true
+vim.o.smarttab = true
+
 
 vim.o.undofile = true
 vim.opt.scrolloff = 8
@@ -19,3 +27,5 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'gp', '<Cmd>bNext<CR>')
 vim.keymap.set('n', 'gn', '<Cmd>bprev<CR>')
 vim.keymap.set('n', 'gw', '<Cmd>bd<CR>')
+vim.keymap.set('n', '<Space><Enter>', 'o<Esc>')
+
