@@ -2,7 +2,7 @@ return {
 	"akinsho/bufferline.nvim"
 	,
 	config = function()
-		require("bufferline").setup{}
+		-- require("bufferline").setup{}
   vim.keymap.set('n', '<leader>1',  '<Cmd>BufferLineGoToBuffer 1<CR>', {})
   vim.keymap.set('n', '<leader>2',  '<Cmd>BufferLineGoToBuffer 2<CR>', {})
   vim.keymap.set('n', '<leader>3',  '<Cmd>BufferLineGoToBuffer 3<CR>', {})
