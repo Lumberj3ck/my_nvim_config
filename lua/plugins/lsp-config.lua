@@ -2,6 +2,7 @@ local lsp_servers = {
     'lua_ls',
     'quick_lint_js',
     'pyright',
+    'gopls',
     -- 'pyre',
     'ruff_lsp',
     'jdtls'
