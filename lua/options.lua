@@ -10,6 +10,7 @@ vim.o.expandtab = true
 vim.o.smartindent = true
 vim.o.autoindent = true
 vim.o.smarttab = true
+vim.opt.wrap = false
 
 
 vim.o.undofile = true
@@ -18,7 +19,7 @@ vim.opt.swapfile = false
 
 vim.opt.relativenumber = true
 
--- vim.keymap.set('n', '<leader>pv',  vim.cmd.Ex)
+vim.keymap.set('n', '<leader>pv',  vim.cmd.Ex)
 vim.o.termguicolors = true
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
